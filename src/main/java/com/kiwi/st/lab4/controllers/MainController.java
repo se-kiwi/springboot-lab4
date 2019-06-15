@@ -22,7 +22,7 @@ public class MainController {
     }
 
     @GetMapping("/hello")
-    public String sayHello(String username, String code) {
-        return mainService.sayHello(username, code);
+    public String sayHello(String code) {
+        return mainService.sayHello(code);
     }
 }

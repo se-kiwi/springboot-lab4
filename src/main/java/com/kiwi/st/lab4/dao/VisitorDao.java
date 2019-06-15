@@ -9,6 +9,10 @@ public interface VisitorDao extends CrudRepository<Visitor, String> {
 
     Visitor getByUsernameAndPassword(String username, String password);
 
+    Boolean existsByCode(String code);
+
+    Visitor getByCode(String code);
+
     Boolean existsByUsernameAndCode(String username, String code);
 
 }

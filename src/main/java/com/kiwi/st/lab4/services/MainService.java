@@ -27,10 +27,11 @@ public class MainService {
         return new Response(true, code);
     }
 
-    public String sayHello(String username, String code) {
+    public String sayHello(String code) {
         String res = "You are not welcome!";
-        if (visitorDao.existsByUsernameAndCode(username, code)) {
-            res = "Hello, " + username + ". Have a nice day!";
+        Visitor visitor = visitorDao.getByCode(code);
+        if (visitor != null) {
+            res = "Hello, " + visitor.getUsername() + ". Have a nice day!";
         }
         return res;
     }
